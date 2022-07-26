@@ -55,6 +55,13 @@ cp .example.env .env
 
 ```
 
+### - Run the application in development mode
+
+```bash
+npm run start:dev
+```
+
+
 ## Links
 
 - Swagger: http://localhost:3000/docs
