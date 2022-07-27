@@ -45,6 +45,8 @@ cd dashr
 npm install
 ```
 
+
+
 ### - Environment Configuration
 
 Integrated Configuration Module so you can just inject `ConfigService`
@@ -71,6 +73,8 @@ npm run start:dev
 
 
 ### Install Act for local testing of the github actions
+
+Make sure you have docker installed for act to work.
 
 ```bash
 npm install -g act
