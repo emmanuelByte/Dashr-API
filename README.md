@@ -68,3 +68,24 @@ npm run start:dev
 <!-- - Adminer (client for DB): http://localhost:8080
 - Maildev: http://localhost:1080 -->
 
+
+
+### Install Act for local testing of the github actions
+
+```bash
+npm install -g act
+```
+
+Or install using homebrew
+```bash
+brew install act
+```
+
+Test the github actions locally
+```bash
+$ act
+```
+For M1 users, 
+```bash
+$ act --container-architecture linux/amd64
+```
