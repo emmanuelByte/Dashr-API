@@ -59,9 +59,15 @@ cp .example.env .env
 
 ### - Run the application in development mode
 
+Create a postgres database with psql and create a user with the name 'postgres'.
+
 ```bash
-npm run start:dev
+$ psql -U postgres
+
+postgres=# CREATE DATABASE dashr WITH OWNER = postgres ENCODING = 'UTF8' LC_COLLATE = 'C' LC_CTYPE = 'C' TABLESPACE = pg_default CONNECTION LIMIT = -1;
 ```
+
+Start the application with `npm run start:dev`
 
 
 ## Links
