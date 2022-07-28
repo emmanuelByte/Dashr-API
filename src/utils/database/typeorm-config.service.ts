@@ -9,7 +9,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: "postgres",
-      url: 'postgres://postgres:postgres@localhost:5432/dashr',
+      url: this.configService.get<string>('DB_URI'),
       port: parseInt('5432'),
       synchronize: true,
       dropSchema: false,
