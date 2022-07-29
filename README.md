@@ -76,6 +76,14 @@ postgres=# CREATE DATABASE dashr WITH OWNER = postgres ENCODING = 'UTF8' LC_COLL
 
 Start the application with `npm run start:dev`
 
+### - Run the application as a docker container
+
+```bash
+docker-compose up -d --build
+```
+
+
+
 Generate a new resource with nest-cli, e.g users
 
 ```bash
