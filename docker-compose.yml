@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  dashr-api:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    image: rscheele3214/dashr-api:latest
+    depends_on:
+      - database
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/dash-api:ro
+      # - /dashr-api/node_modules
+    environment:
+      - DB_URI=postgres://postgres:postgres@postgres:5432/postgres
+
+
+  postgres:
+    image: postgres:10.4
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+
+  # live-reloader:
+  #   image: apogiatzis/livereloading
+  #   container_name: livereloader
+  #   privileged: true
+  #   environment:
+  #     - RELOAD_DELAY=1.5              # seconds
+  #     - RELOAD_CONTAINER=dashr-api   # container name
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
+  #     - "./dashr-api:/dashr-api"
+
+
+    
+ 

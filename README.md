@@ -34,6 +34,8 @@ Run the application with docker
 
 ## Comfortable development
 
+
+
 ```bash
 git clone https://github.com/r-scheele/dashr-api.git dashr
 cd dashr
@@ -45,12 +47,17 @@ cd dashr
 npm install
 ```
 
+Install Nest-cli for easy development, and maintenance of your Nestjs project
 
+```bash
+npm install -g @nestjs/cli
+```
 
 ### - Environment Configuration
 
-Integrated Configuration Module so you can just inject `ConfigService`
-and read all environment variables from `.env` files.
+ `ConfigService` read all environment variables from `.env` files.
+
+ Copy the `.env.example` file to `.env` and edit it, with your own values.
 
 ```bash
 cp .example.env .env
@@ -69,6 +76,12 @@ postgres=# CREATE DATABASE dashr WITH OWNER = postgres ENCODING = 'UTF8' LC_COLL
 
 Start the application with `npm run start:dev`
 
+Generate a new resource with nest-cli, e.g users
+
+```bash
+$ nest generate resource users
+```
+This assumes you have nest-cli installed.
 
 ## Links
 
