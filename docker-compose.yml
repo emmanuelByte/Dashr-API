@@ -8,11 +8,11 @@ services:
     image: rscheele3214/dashr-api:latest
     depends_on:
       - database
+    restart: always
     ports:
       - "3000:3000"
     volumes:
-      - .:/dash-api:ro
-      # - /dashr-api/node_modules
+      - .:/dashr
     environment:
       - DB_URI=postgres://postgres:postgres@postgres:5432/postgres
 

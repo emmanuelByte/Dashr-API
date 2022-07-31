@@ -64,7 +64,7 @@ cp .example.env .env
 
 ```
 
-### - Run the application in development mode
+### - To run the application in development mode with `npm run start:dev`
 
 Create a postgres database with psql and create a user with the name 'postgres'.
 
@@ -74,12 +74,16 @@ $ psql -U postgres
 postgres=# CREATE DATABASE dashr WITH OWNER = postgres ENCODING = 'UTF8' LC_COLLATE = 'C' LC_CTYPE = 'C' TABLESPACE = pg_default CONNECTION LIMIT = -1;
 ```
 
-Start the application with `npm run start:dev`
-
-### - Run the application as a docker container
+### - To run the application as a docker container
 
 ```bash
-docker-compose up -d --build
+docker-compose up
+```
+
+### - To re-build the application docker image
+
+```bash
+docker-compose up --build
 ```
 
 
