@@ -1,5 +1,5 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { Module, INestApplication } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi'
 
@@ -29,4 +29,17 @@ import { TypeOrmConfigService } from './utils/database/typeorm-config.service';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  static port: number | string;
+
+  constructor(private readonly configService: ConfigService) {
+    AppModule.port = this.configService.get('PORT');
+  }
+
+  static getBaseUrl(app: INestApplication) {
+    let baseUrl = app.getHttpServer().address().address;
+   if (baseUrl === '0.0.0.0' || baseUrl === '::') {
+     return baseUrl = 'localhost';
+   }
+  }
+}

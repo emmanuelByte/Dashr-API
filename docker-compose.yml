@@ -9,12 +9,11 @@ services:
     depends_on:
       - database
     restart: always
-    ports:
-      - "3000:3000"
     volumes:
       - .:/dashr
     environment:
       - DB_URI=postgres://postgres:postgres@postgres:5432/postgres
+      - PORT=3000
 
 
   postgres:
@@ -26,16 +25,7 @@ services:
     ports:
       - 5432:5432
 
-  # live-reloader:
-  #   image: apogiatzis/livereloading
-  #   container_name: livereloader
-  #   privileged: true
-  #   environment:
-  #     - RELOAD_DELAY=1.5              # seconds
-  #     - RELOAD_CONTAINER=dashr-api   # container name
-  #   volumes:
-  #     - "/var/run/docker.sock:/var/run/docker.sock"
-  #     - "./dashr-api:/dashr-api"
+
 
 
     
