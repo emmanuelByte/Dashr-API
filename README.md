@@ -37,7 +37,7 @@ Run the application with docker
 
 
 ```bash
-git clone https://github.com/r-scheele/dashr-api.git dashr
+git clone https://github.com/Grey-Area-Encircla/dashr-api.git dashr
 cd dashr
 ```
 
